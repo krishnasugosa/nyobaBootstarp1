@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: black;
+    overflow-x: hidden;
+}
+
+.a1{
+    background: linear-gradient(to top left,rgb(184, 69, 210),rgb(56, 2, 83),rgb(255, 0, 166));
+    color: transparent;
+    background-clip: text;
+    margin-left: 10px;
+    text-decoration: none;
+    font-family: 'Press Start 2P','system ui';
+}
+
+.navbar{
+    background-color: rgba(0, 0, 0, 0.201);
+    backdrop-filter: blur(30px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-inner{
+    display: flex;
+}
+
+.list{
+    color: white;
+    font-family: 'Press Start 2P','system ui';
+}
+
+.list:hover{
+    background: linear-gradient(to top left,rgb(116, 5, 141),rgb(6, 2, 83));
+    color: transparent;
+    background-clip: text;
+}
+
+.section-1{
+    margin-top: 250px;
+}
+
+.inner-section1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title1{
+    background: linear-gradient(to bottom right,red,yellow,green,orange,purple,blue);
+    color: transparent;
+    background-clip: text;
+    font-size: 0px;
+    font-family: cursive;
+    filter: blur(30px);
+}
+
+.show{
+    filter: blur(0px);
+    font-size: 200px;
+    transition: 2s ease;
+}
+
+.main-slider{
+    width: min(1200px, 90vw);
+    margin: auto;
+    position: relative;
+    top: 30px;
+}
+.slider{
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
+}
+.slider .list-i{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
+}
+.slider .list-i .item{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) )!important;
+}
+.slider .list-i .item img{
+    width: 100%;
+}
+.item img{
+    filter: brightness(500%);
+}
+@keyframes autoRun{
+    from{
+        left: 130%;
+    }to{
+        left: calc(var(--width) * -1);
+    }
+}
+.slider:hover .item{
+    animation-play-state: paused!important;
+}
+
+@keyframes reversePlay{
+    from{
+        left: calc(var(--width) * -1);
+    }to{
+        left: 130%;
+    }
+}
+
+
+.card{
+    background-color: rgba(255, 255, 255, 0.228);
+    backdrop-filter: blur(25px);
+    color: white;
+}
+
+.btn-outline-primary{
+    border: white 2px solid;
+    color: white;
+}
+
+.btn-outline-primary:hover{
+    border: white 2px solid;
+    box-shadow: 0px 0px 5px white;
+    background-color: white;
+    color: black;
+}
+
+.cards{
+    margin-top: 30px;
+    transform: translateY(100px);
+    filter: blur(10px);
+}
+
+.hiddenC:nth-child(1){
+    transition-delay: 200ms;
+}
+
+.hiddenC:nth-child(2){
+    transition-delay: 400ms;
+}
+
+.hiddenC:nth-child(3){
+    transition-delay: 600ms;
+}
+
+.show-btn{
+    transform: translateY(0px);
+    filter: blur(0px);
+    transition: 2s ease;
+}
+
+.opening-card-first{
+    margin-top: 30px;
+}
+
+.alp2{
+    margin-top: 30px;
+}
+
+.a2,.a3{
+   display: none;
+   color: white;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+@media screen and (max-width:500px){
+    .a1{
+       position: relative;
+       top: 5px;
+    }
+    .a2{
+        display: block;
+        position: relative;
+        top: 3px;
+        left: -40px;
+    }
+    .a3{
+        position: relative;
+        top: 2px;
+        left: -30px;
+    }
+    .navbar-inner{
+        display: none;
+        flex-direction: column;
+        position: relative;
+        left: 100%;
+    }
+    .section-1{
+        margin-top: 280px;
+    }
+    .show{
+        font-size: 60px;
+    }
+    .show2{
+        display: block;
+        position: relative;
+        left: 0;
+    }
+    .hidden{
+        display: none;
+    }
+    .hidden-toggle{
+        position: relative;
+        left: -35px;
+    }
+    .show-On{
+        display: block;
+    }
+
+}
+
+@media screen and (max-width:456px){
+    .a3{
+        position: relative;
+        top: 2px;
+        left: -1px;
+    }
+}
